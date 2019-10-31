@@ -1,5 +1,5 @@
 <template>
-  <div class="box" :style="{backgroundImage:'url(http://ctpbee.oss-cn-beijing.aliyuncs.com/'+path+'.jpg)'}">
+  <div class="box">
     <div class="login">
       <el-tabs type="border-card">
         <el-tab-pane label="普通登录">
@@ -81,6 +81,7 @@
 </template>
 
 <script>
+//  :style="{backgroundImage:'url(http://ctpbee.oss-cn-beijing.aliyuncs.com/'+path+'.jpg)'}"
 import { setTimeout } from 'timers'
 export default {
   name: 'Login',
@@ -180,7 +181,7 @@ export default {
     }
   },
   mounted() {
-    this.backgroundWheel()
+    // this.backgroundWheel()
   }
 }
 </script>

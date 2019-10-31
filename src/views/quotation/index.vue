@@ -49,9 +49,8 @@ export default {
       this.options = res
     },
     tick: function(res) {
-      // console.log(res)
+      console.log(res)
       this.symbolObj[res.data.symbol] = res.data
-      // console.log(this.symbolObj)
       this.symbolArr = []
       for (let i in this.symbolObj) {
         this.symbolArr.push(this.symbolObj[i])
@@ -88,7 +87,7 @@ export default {
     },
     getSymbol() {
       this.$axios
-        .put(this.quotationUrl,{ name: 'test' })
+        .put(this.quotationUrl)
         .then(res => {
           let returnData = res.data
           this.tips({
