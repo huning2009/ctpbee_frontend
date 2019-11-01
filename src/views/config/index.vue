@@ -102,6 +102,7 @@ export default {
         .get(this.configUrl)
         .then(res => {
           let returnData = res.data
+
           this.tips({
             type: returnData.success,
             msg: returnData.msg,

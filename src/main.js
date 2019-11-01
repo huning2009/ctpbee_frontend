@@ -15,7 +15,8 @@ import '@/icons' // icon
 import '@/assets/css/font/iconfont.css'
 //全局使用axios
 Vue.prototype.$axios = axios
-const URL = 'http://192.168.31.30:5000/'
+// const URL = 'http://192.168.31.30:5000/'
+const URL = 'http://120.79.8.150:5000/'
 axios.defaults.baseURL = URL
 //请求拦截器
 axios.interceptors.request.use(config => {

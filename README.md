@@ -93,12 +93,12 @@
 {
   "type": "account",
   "data":[
-    {key:"accountid",value:"089131"},
-    {key:"available",value:689195.3399999999},
-    {key:"balance",value:1188174.5899999999},
-    {key:"frozen",value:0},
-    {key:"gateway_name",value:"ctp"},
-    {key:"local_account_id",value:"ctp.089131"},
+    {"key":"accountid","value":"089131"},
+    {"key":"available","value":689195.3399999999},
+    {"key":"balance","value":1188174.5899999999},
+    {"key":"frozen","value":0},
+    {"key":"gateway_name","value":"ctp"},
+    {"key":"local_account_id","value":"ctp.089131"},
   ]
 }
 ```
@@ -113,9 +113,9 @@
 
 ```json
   {
-    data: "",
-    msg: "更新合约列表完成",
-    success: true
+    "data": "",
+    "msg": "更新合约列表完成",
+    "success": true
   }
 ```
 
@@ -133,9 +133,9 @@
 
 ```json
   {
-    data: "",
-    msg: "订阅a1911.DCE成功",
-    success: true
+    "data": "",
+    "msg": "订阅a1911.DCE成功",
+    "success": true
   }
 ```
 
@@ -154,46 +154,379 @@
 
 ```json
 {
-  type:"tick",
-  data:{
-      ask_price_1: 4424
-      ask_price_2: 0
-      ask_price_3: 0
-      ask_price_4: 0
-      ask_price_5: 0
-      ask_volume_1: 2
-      ask_volume_2: 0
-      ask_volume_3: 0
-      ask_volume_4: 0
-      ask_volume_5: 0
-      average_price: 64728.63636363636
-      bid_price_1: 4216
-      bid_price_2: 0
-      bid_price_3: 0
-      bid_price_4: 0
-      bid_price_5: 0
-      bid_volume_1: 2
-      bid_volume_2: 0
-      bid_volume_3: 0
-      bid_volume_4: 0
-      bid_volume_5: 0
-      datetime: "2019-10-31 11:30:00.500000"
-      exchange: "SHFE"
-      gateway_name: "ctp"
-      high_price: 4371
-      last_price: 4326
-      last_volume: 0
-      limit_down: 4064
-      limit_up: 4583
-      local_symbol: "ag1911.SHFE"
-      low_price: 4285
-      name: "白银1911"
-      open_interest: 314
-      open_price: 4290
-      pre_close: 4321
-      pre_settlement_price: 4324
-      symbol: "ag1911"
-      volume: 132
+  "type":"tick",
+  "data":{
+      "ask_price_1": 4424,
+      "ask_price_2": 0,
+      "ask_price_3": 0,
+      "ask_price_4": 0,
+      "ask_price_5": 0,
+      "ask_volume_1": 2,
+      "ask_volume_2": 0,
+      "ask_volume_3": 0,
+      "ask_volume_4": 0,
+      "ask_volume_5": 0,
+      "average_price": 64728.63636363636,
+      "bid_price_1": 4216,
+      "bid_price_2": 0,
+      "bid_price_3": 0,
+      "bid_price_4": 0,
+      "bid_price_5": 0,
+      "bid_volume_1": 2,
+      "bid_volume_2": 0,
+      "bid_volume_3": 0,
+      "bid_volume_4": 0,
+      "bid_volume_5": 0,
+      "datetime": "2019-10-31 11:30:00.500000",
+      "exchange": "SHFE",
+      "gateway_name": "ctp",
+      "high_price": 4371,
+      "last_price": 4326,
+      "last_volume": 0,
+      "limit_down": 4064,
+      "limit_up": 4583,
+      "local_symbol": "ag1911.SHFE",
+      "low_price": 4285,
+      "name": "白银1911",
+      "open_interest": 314,
+      "open_price": 4290,
+      "pre_close": 4321,
+      "pre_settlement_price": 4324,
+      "symbol": "ag1911",
+      "volume": 132,
   }
+}
+```
+
+## 5.策略
+
+### 5.1获取策略列表
+
+- 请求路径: strategy
+- 请求方法: get
+- 响应参数
+
+| 参数名   | 参数说明     | 备注            |
+| -------- | ----------- | --------------- |
+| name     | 策略名称     |                 |
+| status   | 策略状态     |                 |
+
+- 响应数据
+
+```json
+{
+  "data": [{name: "default_settings",status: "运行中"}],
+  "msg": "",
+  "success": true
+}
+```
+
+### 5.3改变策略状态
+
+- 请求路径: strategy
+- 请求方法: post
+- 请求参数
+
+| 参数名   | 参数说明     | 备注                |
+| -------- | ----------- | ---------------     |
+| name     | 策略名称     |                     |
+| operation| 操作        |"开启"或"关闭"(string)|
+
+- 响应数据
+
+```json
+{
+  "data": "",
+  "msg": "开启成功",
+  "success": true
+}
+```
+
+### 5.4删除策略
+
+- 请求路径: strategy
+- 请求方法: delete
+- 请求参数
+
+| 参数名   | 参数说明     | 备注                |
+| -------- | ----------- | ---------------     |
+| name     | 策略名称     |                     |
+
+- 响应数据
+
+```json
+{
+  "data": "",
+  "msg": "删除成功",
+  "success": true
+}
+```
+
+## 6.添加策略
+
+### 6.1获取策略代码
+
+- 请求路径: code
+- 请求方法: get
+- 请求参数
+
+| 参数名   | 参数说明     | 备注                |
+| -------- | ----------- | ---------------     |
+| name     | 策略名称     |                     |
+
+- 响应数据
+
+```json
+{
+  "data": "",
+  "msg": "策略代码",
+  "success": true
+}
+```
+
+### 6.2添加或更新策略
+
+- 请求路径: code
+- 请求方法: post
+- 请求参数
+
+| 参数名   | 参数说明     | 备注                |
+| -------- | ----------- | ---------------     |
+| test     | 策略代码     |                     |
+
+- 响应数据
+
+```json
+{
+  "data": "",
+  "msg": "添加或更新策略成功",
+  "success": true
+}
+```
+
+## 7.下单
+
+### 7.1获取持仓，待成交，发单，成交数据以及log信息
+
+- 请求路径: order_solve
+- 请求方法: get
+- 响应参数
+
+| 参数名              | 参数说明     | 备注                |
+| --------------------| ----------- | ---------------     |
+| active_order_list   | 待成交数据   |                     |
+| order_list          | 下单数据     |                     |
+| trade_list          | 成交数据     |                     |
+| position_list       | 持仓数据     |                     |
+| log_history         | 日志信息     |                     |
+
+- 响应数据
+
+```json
+{
+  "data": {
+    "active_order_list":[],
+    "order_list":[],
+    "trade_list":[],
+    "position_list":[
+      {
+        "direction": "long",
+        "exchange": "CZCE",
+        "local_symbol": "AP001.CZCE",
+        "position_date": 2,
+        "position_profit": -820,
+        "price": 7966,
+        "stare_position_profit": 0,
+        "symbol": "AP001",
+        "volume": 2,
+        "yd_volume": 2,
+      }
+    ],
+    "log_history":[
+      {
+        "created": "2019-10-31 19:28:47.160",
+        "name": "ctpbee",
+        "levelname": "INFO",
+        "owner": "App",
+        "message": "行情服务器连接成功"
+      }
+    ],
+  },
+  "msg": "",
+  "success": true
+}
+```
+
+### 7.2交易(买多,卖空)
+
+- 请求路径: order_solve
+- 请求方法: post
+- 请求参数
+
+| 参数名              | 参数说明     | 备注                |
+|---------------------| ----------- | ----------------    |
+| local_symbol        | 品种名称     |                     |
+| price               | 价格         |                     |
+| volume              | 手数         |                     |
+| exchange            | 交易所       |                     |
+| offset              |开关仓        |   open              |
+| type                | 类型        |   限价或市价          |
+| direction           | 买多或卖空   |long(买多)或short(卖空)|
+
+- 响应数据
+
+```json
+{
+  "data": "",
+  "msg": "成功下单",
+  "success": true,
+}
+```
+
+### 7.3撤单
+
+- 请求路径: order_solve
+- 请求方法: delete
+- 请求参数
+
+| 参数名              | 参数说明     | 备注                |
+|---------------------| ----------- | ----------------    |
+| local_symbol        | 品种名称     |                     |
+| exchange            | 交易所       |                     |
+| order_id            | id          |                     |
+
+- 响应数据
+
+```json
+{
+  "data": "",
+  "msg": "撤单成功",
+  "success": true,
+}
+```
+
+### 7.4平仓
+
+- 请求路径: close_position
+- 请求方法: post
+- 请求参数
+
+| 参数名              | 参数说明     | 备注                |
+|---------------------| ----------- | ----------------    |
+| local_symbol        | 品种名称     |                     |
+| exchange            | 交易所       |                     |
+| order_id            | id          |                     |
+| symbol              | 品种名称     |                     |
+| direction           | 买多或卖空   |long(买多)或short(卖空)|
+
+- 响应数据
+
+```json
+{
+  "data": "",
+  "msg": "平仓成功",
+  "success": true,
+}
+```
+
+### 7.5获取k线数据
+
+- 请求路径: bar
+- 请求方法: post
+- 请求参数
+
+| 参数名              | 参数说明     | 备注                |
+|---------------------| ----------- | ----------------    |
+| local_symbol        | 品种名称     |                     |
+
+- 响应数据
+
+```json
+{
+  "data": [
+    [1572351540000,3303,3303,3303,3303,0]
+  ],
+  "msg": "平仓成功",
+  "success": true,
+}
+```
+
+### 7.6 socket推送当前所选合约的行情数据
+
+- socket事件名: tick
+
+### 7.7 socket推送持仓数据
+
+- socket事件名: position
+
+### 7.8 socket推送待成交数据
+
+- socket事件名: active_order
+
+### 7.9 socket推送成交数据
+
+- socket事件名: trade
+  
+### 7.10 socket推送发单数据
+
+- socket事件名: order
+  
+### 7.11 socket推送k线数据
+
+- socket事件名: bar
+  
+### 7.12 socket推送日志数据
+
+- socket事件名: log
+
+## 8.配置
+
+### 8.1获取配置信息
+
+- 请求路径: config
+- 请求方法: get
+- 响应数据
+  
+```json
+{
+  "data":{
+    "CLOSE_PATTERN": "today",
+    "INSTRUMENT_INDEPEND": false,
+    "REFRESH_INTERVAL": 1.5,
+    "SHARED_FUNC": false,
+    "SLIPPAGE_BUY": 0,
+    "SLIPPAGE_COVER": 0,
+    "SLIPPAGE_SELL": 0,
+    "SLIPPAGE_SHORT": 0,
+  },
+  "msg":"",
+  "success":"true"
+}
+```
+
+### 8.2更新配置信息
+
+- 请求路径: config
+- 请求方法: put
+- 请求参数
+
+| 参数名              | 参数说明     | 备注                |
+|---------------------| ----------- | ----------------    |
+| CLOSE_PATTERN       |             |                     |
+| INSTRUMENT_INDEPEND |             |                     |
+| REFRESH_INTERVAL    |             |                     |
+| SHARED_FUNC         |             |                     |
+| SLIPPAGE_BUY        |             |                     |
+| SLIPPAGE_COVER      |             |                     |
+| SLIPPAGE_SELL       |             |                     |
+| SLIPPAGE_SHORT      |             |                     |
+
+- 响应数据
+  
+```json
+{
+  "data":"",
+  "msg":"修改成功",
+  "success":"true"
 }
 ```
