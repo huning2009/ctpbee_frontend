@@ -215,13 +215,13 @@
 
 ```json
 {
-  "data": [{name: "default_settings",status: "运行中"}],
+  "data": [{"name": "default_settings","status": "运行中"}],
   "msg": "",
   "success": true
 }
 ```
 
-### 5.3改变策略状态
+### 5.2改变策略状态
 
 - 请求路径: strategy
 - 请求方法: post
@@ -242,7 +242,7 @@
 }
 ```
 
-### 5.4删除策略
+### 5.3删除策略
 
 - 请求路径: strategy
 - 请求方法: delete
