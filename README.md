@@ -437,7 +437,7 @@
 
 | 参数名              | 参数说明     | 备注                |
 |---------------------| ----------- | ----------------    |
-| local_symbol        | 品种名称     |                     |
+| local_symbol        | 品种名称     |  不能为空           |
 
 - 响应数据
 
@@ -512,14 +512,14 @@
 
 | 参数名              | 参数说明     | 备注                |
 |---------------------| ----------- | ----------------    |
-| CLOSE_PATTERN       |             |                     |
-| INSTRUMENT_INDEPEND |             |                     |
-| REFRESH_INTERVAL    |             |                     |
-| SHARED_FUNC         |             |                     |
-| SLIPPAGE_BUY        |             |                     |
-| SLIPPAGE_COVER      |             |                     |
-| SLIPPAGE_SELL       |             |                     |
-| SLIPPAGE_SHORT      |             |                     |
+| CLOSE_PATTERN       |             |   不能为空           |
+| INSTRUMENT_INDEPEND |             |   不能为空           |
+| REFRESH_INTERVAL    |             |   不能为空           |
+| SHARED_FUNC         |             |   不能为空           |
+| SLIPPAGE_BUY        |             |   不能为空           |
+| SLIPPAGE_COVER      |             |   不能为空           |
+| SLIPPAGE_SELL       |             |   不能为空           |
+| SLIPPAGE_SHORT      |             |   不能为空           |
 
 - 响应数据
   
@@ -527,6 +527,47 @@
 {
   "data":"",
   "msg":"修改成功",
+  "success":"true"
+}
+```
+
+## 9.修改授权码
+
+- 请求路径: auth_code
+- 请求方法: put
+- 请求参数
+  
+| 参数名              | 参数说明     | 备注                 |
+|---------------------| ----------- | ----------------    |
+| password            |  账户密码    | 不能为空            |
+| authorization       |  新的授权码  | 不能为空            |
+
+- 响应数据
+  
+```json
+{
+  "data":"",
+  "msg":"修改成功",
+  "success":"true"
+}
+```
+
+### 10.服务器退出
+
+- 请求路径: logout
+- 请求方法: post
+- 请求参数
+  
+| 参数名              | 参数说明     | 备注                |
+|---------------------| ----------- | ----------------    |
+| authorization       |  授权码     | 不能为空             |
+
+- 响应数据
+  
+```json
+{
+  "data":"",
+  "msg":"服务器已安全退出",
   "success":"true"
 }
 ```

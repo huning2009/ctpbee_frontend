@@ -58,7 +58,7 @@
             <el-input type="text" v-model="detailedLogin.md_address" placeholder="行情前置/MD_ADDRESS"></el-input>
             <el-input
               type="password"
-              v-model="detailedLogin.AuthorizationCode"
+              v-model="detailedLogin.authorization"
               placeholder="授权码/AUTHORIZATION_CODE"
               @keyup.enter.native="handleLogin(detailedLogin,'detail')"
             ></el-input>
@@ -117,13 +117,14 @@ export default {
       ],
       simnowValue: 'simnow24小时',
       detailedLogin: {
-        userid: '',
-        password: '',
-        brokerid: '',
-        appid: '',
-        auth_code: '',
-        td_address: '',
-        md_address: ''
+        userid: '089131',
+        password: '350888',
+        brokerid: '9999',
+        appid: 'simnow_client_test',
+        auth_code: '0000000000000000',
+        td_address: 'tcp://180.168.146.187:10130',
+        md_address: 'tcp://180.168.146.187:10131',
+        authorization:'000000'
       },
       simple_login_info: {
         simnow_forever: {
