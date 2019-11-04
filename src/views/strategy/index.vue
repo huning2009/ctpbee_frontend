@@ -55,7 +55,6 @@ export default {
         .get(this.strategyUrl)
         .then(res => {
           this.tableData = res.data.data
-          console.log(res.data)
         })
         .catch(err => {
           console.log(err)

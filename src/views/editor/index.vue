@@ -253,7 +253,6 @@ ext = StrategyClass('strategy_name')
         .post(this.updateUrl,{ text: code })
         .then(res => {
           let returnData = res.data
-
           this.tips({
             type: returnData.success,
             msg: returnData.msg,

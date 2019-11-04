@@ -115,7 +115,7 @@ export default {
         .put(this.modifyUrl,data)
         .then(res => {
           let returnData = res.data;
-
+          console.log(returnData);
            this.tips({
             type: returnData.success,
             msg: returnData.msg,
